@@ -1,16 +1,19 @@
- /* black: 0A122A */
- /* green: 698F3F */
- /* marron: E7DECD */
+ /* Dark Theme with Green Accents */
+ /* Dark background: 1A1A1A */
+ /* Dark secondary: 2D2D2D */
+ /* Green accent: 4CAF50 */
+ /* Light text: F5F5F5 */
 
 /* Navigation */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(10, 18, 42, 0.95);
+    background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
+    border-bottom: 2px solid #4CAF50;
 }
 
 .nav-content {
@@ -25,7 +28,7 @@
 .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #698F3F;
+    color: #4CAF50;
 }
 
 .nav-menu {
@@ -37,13 +40,13 @@
 }
 
 .nav-menu a {
-    color: white;
+    color: #F5F5F5;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: #698F3F;
+    color: #4CAF50;
 }
 
 .nav-toggle {
@@ -55,14 +58,14 @@
 .nav-toggle span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: #F5F5F5;
     margin: 3px 0;
     transition: 0.3s;
 }
 
 /* Hero Section */
 .hero-section {
-    background-image: url(forest.jpg);
+    background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -74,34 +77,35 @@
 }
 
 .hero-content {
-    background: rgba(10, 18, 42, 0.8);
+    background: rgba(26, 26, 26, 0.9);
     padding: 3rem;
     border-radius: 10px;
     max-width: 800px;
+    border-left: 4px solid #4CAF50;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: #F5F5F5;
 }
 
 .hero-content h2 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: #698F3F;
+    color: #4CAF50;
 }
 
 /* Main Content */
 main {
     margin-top: 50px;
-    background: white;
+    background: #1A1A1A;
     position: relative;
     z-index: 1;
 }
 
 header{
-    background-image: url(forest.jpg);
-    background-size: cover;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
     height: 100vh;
     margin: 0px;
     border-radius: 0%;
@@ -111,24 +115,31 @@ body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #1A1A1A;
+    color: #F5F5F5;
     display: content;
 }
 
 h1{
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
+    color: #F5F5F5;
 }
 
 h2{
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #F5F5F5;
+}
+
+h3 {
+    color: #4CAF50;
 }
 
 .about{
     margin-top: 50px;
     padding-top: 30px;
-    background: white;
+    background: #1A1A1A;
     position: relative;
     z-index: 1;
 }
@@ -136,6 +147,7 @@ h2{
 .styleparagraph{
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #F5F5F5;
 }
 
 .content{
@@ -155,15 +167,15 @@ h2{
 }
 
 .skill-category {
-    background: #f8f9fa;
+    background: #2D2D2D;
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid #698F3F;
+    border-left: 4px solid #4CAF50;
 }
 
 .skill-category h4 {
     margin: 0 0 1rem 0;
-    color: #0A122A;
+    color: #4CAF50;
     font-size: 1.1em;
 }
 
@@ -175,7 +187,8 @@ h2{
 
 .skill-category li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #3D3D3D;
+    color: #F5F5F5;
 }
 
 .skill-category li:last-child {
@@ -184,17 +197,18 @@ h2{
 
 .skill-category li:before {
     content: "▶";
-    color: #698F3F;
+    color: #4CAF50;
     margin-right: 0.5rem;
 }
 
 /* Footer */
 footer {
-    background: #0A122A;
-    color: white;
+    background: #0F0F0F;
+    color: #F5F5F5;
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
+    border-top: 2px solid #4CAF50;
 }
 
 .footer-content {
@@ -211,11 +225,11 @@ footer {
 }
 
 .social-link {
-    color: white;
+    color: #F5F5F5;
     text-decoration: none;
     padding: 0.5rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(76, 175, 80, 0.1);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -223,9 +237,9 @@ footer {
 }
 
 .social-link:hover {
-    background: #698F3F;
+    background: #4CAF50;
     transform: translateY(-2px);
-    color: white;
+    color: #1A1A1A;
 }
 
 /* Smooth Scrolling */
@@ -246,7 +260,7 @@ section {
 .learning-intro {
     text-align: center;
     margin-bottom: 30px;
-    color: #666;
+    color: #A0A0A0;
 }
 
 .learning-grid {
@@ -256,16 +270,16 @@ section {
 }
 
 .learning-item {
-    background: #f8f9fa;
+    background: #2D2D2D;
     padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid #698F3F;
+    border-left: 4px solid #4CAF50;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .learning-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
 }
 
 .learning-icon {
@@ -275,13 +289,13 @@ section {
 }
 
 .learning-item h4 {
-    color: #0A122A;
+    color: #4CAF50;
     margin: 0 0 1rem 0;
     font-size: 1.2em;
 }
 
 .learning-item p {
-    color: #555;
+    color: #D0D0D0;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -295,7 +309,7 @@ section {
 .progress-bar {
     flex: 1;
     height: 8px;
-    background: #e0e0e0;
+    background: #3D3D3D;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -307,7 +321,7 @@ section {
     top: 0;
     left: 0;
     height: 100%;
-    background: linear-gradient(90deg, #698F3F, #8FBF5F);
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
     border-radius: 4px;
     width: var(--progress-width, 0%);
     transition: width 2s ease-in-out;
@@ -315,13 +329,14 @@ section {
 
 .learning-progress span {
     font-weight: bold;
-    color: #698F3F;
+    color: #4CAF50;
     min-width: 40px;
 }
 
 @keyframes progressAnimation {
     from { width: 0; }
 }
+
 .projects-section {
     margin: 40px 0;
 }
@@ -329,7 +344,7 @@ section {
 .projects-intro {
     text-align: center;
     margin-bottom: 30px;
-    color: #666;
+    color: #A0A0A0;
 }
 
 .projects-container {
@@ -343,14 +358,15 @@ section {
     gap: 20px;
     align-items: flex-start;
     padding: 20px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #3D3D3D;
     border-radius: 8px;
+    background: #2D2D2D;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
 }
 
 .project-image {
@@ -372,13 +388,13 @@ section {
 
 .project-details h4 {
     margin: 0 0 10px 0;
-    color: #0A122A;
+    color: #4CAF50;
     font-size: 1.2em;
 }
 
 .project-details p {
     margin: 0 0 15px 0;
-    color: #333;
+    color: #D0D0D0;
     line-height: 1.5;
 }
 
@@ -390,28 +406,30 @@ section {
 }
 
 .project-tech span {
-    background-color: #698F3F;
-    color: white;
+    background-color: #4CAF50;
+    color: #1A1A1A;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.85em;
+    font-weight: 500;
 }
 
 .project-details a {
     display: inline-block;
-    background-color: #0A122A;
-    color: white;
+    background-color: #4CAF50;
+    color: #1A1A1A;
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
     transform: translateY(0);
+    font-weight: 500;
 }
 
 .project-details a:hover {
-    background-color: #698F3F;
+    background-color: #66BB6A;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(105, 143, 63, 0.3);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
 }
 
 /* Responsive Design */
@@ -421,7 +439,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: rgba(10, 18, 42, 0.95);
+        background-color: rgba(26, 26, 26, 0.95);
         width: 100%;
         text-align: center;
         transition: 0.3s;
