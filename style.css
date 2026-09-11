@@ -96,6 +96,7 @@
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     min-height: 100vh;
+    min-width: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
