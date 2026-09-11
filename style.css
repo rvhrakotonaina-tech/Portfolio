@@ -101,7 +101,8 @@
     justify-content: center;
     text-align: center;
     color: white;
-
+    padding: 2rem 1rem;
+    min-width: 100vh;
     margin-top: 60px;
 }
 
