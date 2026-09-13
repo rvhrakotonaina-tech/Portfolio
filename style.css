@@ -799,10 +799,17 @@ section {
         height: calc(100vh - 60px);
         overflow-y: auto;
         transform: translateX(-100%);
+        visibility: hidden;
     }
 
     .nav-menu.active {
         transform: translateX(0);
+        visibility: visible;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .nav-menu a {
@@ -813,6 +820,14 @@ section {
         box-sizing: border-box;
         overflow-wrap: break-word;
         color: #F5F5F5;
+        text-decoration: none;
+        background: transparent;
+        border: none;
+    }
+
+    .nav-menu a:hover {
+        color: #4CAF50;
+        background: rgba(76, 175, 80, 0.1);
     }
 
     .nav-toggle {
