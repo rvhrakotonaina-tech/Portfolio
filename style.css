@@ -176,6 +176,7 @@ body {
     color: #F5F5F5;
     display: content;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 h1{
@@ -232,6 +233,7 @@ h3 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .skill-category {
@@ -352,6 +354,7 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .learning-item {
@@ -442,6 +445,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .project-item {
@@ -702,7 +706,7 @@ section {
 }
 
 /* Mobile Menu Styles */
-@media (max-width: 767px) {
+@media (max-width: 100%) {
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -716,6 +720,8 @@ section {
         gap: 1.5rem;
         z-index: 999;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        overflow-x: hidden;
+        
     }
 
     .nav-menu.active {
