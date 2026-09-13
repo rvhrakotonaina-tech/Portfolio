@@ -33,11 +33,14 @@
     position: fixed;
     top: 0;
     width: 100%;
+    max-width: 100vw;
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
     border-bottom: 2px solid #4CAF50;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .nav-content {
@@ -47,6 +50,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-logo {
@@ -104,11 +109,14 @@
     color: white;
     padding: 2rem 1rem;
     margin-top: 60px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .hero-content {
     background: rgba(26, 26, 26, 0.9);
-    padding: 2rem;
+    padding: 2rem 1rem;
     border-radius: 10px;
     max-width: 800px;
     border-left: 4px solid #4CAF50;
@@ -117,6 +125,7 @@
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .profile-container {
@@ -143,6 +152,8 @@
     color: #F5F5F5;
     line-height: 1.3;
     word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .hero-content h2 {
@@ -166,6 +177,21 @@ header{
     min-height: 100vh;
     margin: 0px;
     border-radius: 0%;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 body {
@@ -174,9 +200,9 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: linear-gradient(180deg, #1A1A1A 0%, #0F3620 50%, #1A1A1A 100%);
     color: #F5F5F5;
-    display: content;
     overflow-x: hidden;
-    max-width: 100%;
+    width: 100%;
+    max-width: 100vw;
 }
 
 h1{
@@ -204,6 +230,10 @@ h3 {
     background: transparent;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .about p {
@@ -225,6 +255,8 @@ h3 {
     max-width: 1200px;
     width: 100%;
     align-items: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Skills Grid */
@@ -233,7 +265,9 @@ h3 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .skill-category {
@@ -242,6 +276,10 @@ h3 {
     border-radius: 8px;
     border-left: 4px solid #4CAF50;
     backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .skill-category h4 {
@@ -281,6 +319,10 @@ footer {
     padding: 2rem 1rem;
     margin-top: 4rem;
     border-top: 2px solid #4CAF50;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .footer-content {
@@ -291,6 +333,9 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
 }
 
 .footer-content p {
@@ -354,7 +399,9 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .learning-item {
@@ -364,6 +411,10 @@ section {
     border-left: 4px solid #4CAF50;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .learning-item:hover {
@@ -445,7 +496,9 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .project-item {
@@ -459,6 +512,10 @@ section {
     background: rgba(45, 45, 45, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .project-item:hover {
@@ -471,16 +528,23 @@ section {
     height: 200px;
     overflow: hidden;
     border-radius: 6px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    max-width: 100%;
+    display: block;
 }
 
 .project-details {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .project-details h4 {
@@ -502,6 +566,9 @@ section {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .project-tech span {
@@ -534,6 +601,10 @@ section {
 
 #resume {
     padding: 0 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 #resume p {
@@ -706,7 +777,7 @@ section {
 }
 
 /* Mobile Menu Styles */
-@media (max-width: 100%) {
+@media (max-width: 767px) {
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -714,6 +785,7 @@ section {
         flex-direction: column;
         background-color: rgba(26, 26, 26, 0.98);
         width: 100%;
+        max-width: 100vw;
         text-align: center;
         transition: 0.3s;
         padding: 2rem 0;
@@ -721,7 +793,7 @@ section {
         z-index: 999;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         overflow-x: hidden;
-        
+        box-sizing: border-box;
     }
 
     .nav-menu.active {
@@ -732,6 +804,9 @@ section {
         font-size: 1.1rem;
         padding: 0.8rem;
         display: block;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
     }
 
     .nav-toggle {
@@ -748,16 +823,21 @@ section {
     }
 
     .hero-content {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
         margin: 0 0.5rem;
+        width: calc(100% - 1rem);
+        max-width: calc(100vw - 1rem);
     }
 
     .hero-content h1 {
         font-size: 1.3rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     .hero-content h2 {
         font-size: 0.9rem;
+        overflow-wrap: break-word;
     }
 
     .profile-image {
@@ -767,41 +847,55 @@ section {
 
     .content {
         padding: 0 0.75rem;
+        width: 100%;
+        max-width: 100vw;
     }
 
     .skills-grid,
     .learning-grid {
         gap: 1rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     .skill-category,
     .learning-item {
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     .project-item {
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     .project-image {
         height: 180px;
+        width: 100%;
     }
 
     h3 {
         font-size: 1.2rem;
+        overflow-wrap: break-word;
     }
 
     .about p,
     #resume p {
         font-size: 0.9rem;
+        overflow-wrap: break-word;
     }
 
     .project-details h4 {
         font-size: 1rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     .project-details p {
         font-size: 0.85rem;
+        overflow-wrap: break-word;
     }
 
     .project-tech span {
