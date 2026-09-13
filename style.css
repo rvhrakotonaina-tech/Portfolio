@@ -782,23 +782,23 @@ section {
     .nav-menu {
         position: fixed;
         top: 60px;
-        left: 0;
         right: 0;
+        left: auto;
         flex-direction: column;
         background-color: rgba(26, 26, 26, 0.98);
-        width: 100%;
-        max-width: 100vw;
+        width: 70%;
+        max-width: 300px;
         text-align: center;
         transition: transform 0.3s ease;
         padding: 2rem 0;
         gap: 1.5rem;
         z-index: 9999;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
         overflow-x: hidden;
         box-sizing: border-box;
         height: calc(100vh - 60px);
         overflow-y: auto;
-        transform: translateX(-100%);
+        transform: translateX(100%);
         visibility: hidden;
     }
 
@@ -810,6 +810,7 @@ section {
     .nav-menu li {
         width: 100%;
         box-sizing: border-box;
+        list-style: none;
     }
 
     .nav-menu a {
