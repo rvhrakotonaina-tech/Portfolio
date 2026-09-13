@@ -6,12 +6,14 @@ console.log('navToggle:', navToggle);
 console.log('navMenu:', navMenu);
 
 if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
+    navToggle.addEventListener('click', (e) => {
+        e.preventDefault();
         console.log('Toggle clicked');
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        // Don't hide body overflow to allow menu scrolling
         console.log('Menu active:', navMenu.classList.contains('active'));
+        console.log('Menu styles:', window.getComputedStyle(navMenu));
     });
 } else {
     console.error('Nav toggle or menu not found');
@@ -22,7 +24,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
-        document.body.style.overflow = '';
     });
 });
 
@@ -33,7 +34,6 @@ document.addEventListener('click', (e) => {
         !navToggle.contains(e.target)) {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
-        document.body.style.overflow = '';
     }
 });
 
