@@ -2,11 +2,20 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-});
+console.log('navToggle:', navToggle);
+console.log('navMenu:', navMenu);
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        console.log('Toggle clicked');
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        console.log('Menu active:', navMenu.classList.contains('active'));
+    });
+} else {
+    console.error('Nav toggle or menu not found');
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
