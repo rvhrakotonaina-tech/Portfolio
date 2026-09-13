@@ -61,14 +61,15 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-menu a {
     color: #F5F5F5;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
 }
 
 .nav-menu a:hover {
@@ -96,7 +97,6 @@
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     min-height: 100vh;
-    min-width: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,6 +115,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .profile-container {
@@ -131,10 +133,12 @@
     object-fit: cover;
     box-shadow: 0 8px 30px rgba(76, 175, 80, 0.3);
     animation: scaleInProfile 0.6s ease-out;
+    max-width: 120px;
+    max-height: 120px;
 }
 
 .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
     color: #F5F5F5;
     line-height: 1.3;
@@ -142,7 +146,7 @@
 }
 
 .hero-content h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
     color: #4CAF50;
 }
@@ -559,16 +563,16 @@ section {
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .hero-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .profile-image {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
     }
 
     .skills-grid {
@@ -582,6 +586,10 @@ section {
 
     .content {
         padding: 0 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 1.8rem;
     }
 }
 
@@ -609,16 +617,16 @@ section {
     }
 
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .hero-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         border: 4px solid #4CAF50;
     }
 
@@ -678,6 +686,19 @@ section {
     .learning-grid {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /* Mobile Menu Styles */
@@ -687,20 +708,29 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: rgba(26, 26, 26, 0.95);
+        background-color: rgba(26, 26, 26, 0.98);
         width: 100%;
         text-align: center;
         transition: 0.3s;
         padding: 2rem 0;
-        gap: 1rem;
+        gap: 1.5rem;
+        z-index: 999;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+        display: block;
+    }
+
     .nav-toggle {
         display: flex;
+        z-index: 1001;
     }
 
     .nav-toggle.active span:nth-child(1) {
@@ -709,6 +739,74 @@ section {
 
     .nav-toggle.active span:nth-child(2) {
         opacity: 0;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 0.9rem;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content {
+        padding: 0 0.75rem;
+    }
+
+    .skills-grid,
+    .learning-grid {
+        gap: 1rem;
+    }
+
+    .skill-category,
+    .learning-item {
+        padding: 1rem;
+    }
+
+    .project-item {
+        padding: 1rem;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .about p,
+    #resume p {
+        font-size: 0.9rem;
+    }
+
+    .project-details h4 {
+        font-size: 1rem;
+    }
+
+    .project-details p {
+        font-size: 0.85rem;
+    }
+
+    .project-tech span {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .project-details a,
+    .download-btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
     }
 }
 
@@ -723,5 +821,91 @@ section {
     .download-btn {
         padding: 0.9rem 1.5rem;
         font-size: 1rem;
+    }
+
+    .nav-menu a {
+        padding: 1rem;
+    }
+
+    .skill-category,
+    .learning-item,
+    .project-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Extra small screens (under 480px) */
+@media (max-width: 479px) {
+    .hero-content h1 {
+        font-size: 1.1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 0.85rem;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+        border-width: 3px;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-toggle span {
+        width: 20px;
+        height: 2px;
+    }
+
+    .content {
+        padding: 0 0.5rem;
+    }
+
+    .skill-category h4,
+    .learning-item h4 {
+        font-size: 1rem;
+    }
+
+    .skill-category li,
+    .learning-item p {
+        font-size: 0.85rem;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+
+    .project-details h4 {
+        font-size: 0.95rem;
+    }
+
+    .project-details p {
+        font-size: 0.8rem;
+    }
+
+    .project-tech span {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .download-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-link svg {
+        width: 20px;
+        height: 20px;
     }
 }
