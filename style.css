@@ -787,17 +787,20 @@ section {
         width: 100%;
         max-width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease;
         padding: 2rem 0;
         gap: 1.5rem;
-        z-index: 999;
+        z-index: 998;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         overflow-x: hidden;
         box-sizing: border-box;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
         left: 0;
+        width:100%;
     }
 
     .nav-menu a {
