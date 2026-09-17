@@ -34,12 +34,9 @@
     width: 100%;
     max-width: 100vw;
     background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
     padding: 1rem 0;
     border-bottom: 2px solid #4CAF50;
-    overflow-x: hidden;
     box-sizing: border-box;
-
 }
 
 .nav-content {
@@ -803,6 +800,7 @@ section {
         box-sizing: border-box;
         transform: translateX(100%);
         opacity: 0;
+        visibility: hidden;
         z-index: 1000;
         height: 100vh;
         overflow-y: auto;
@@ -856,17 +854,18 @@ section {
 
     .nav-toggle span {
         width: 25px;
+        height: 3px;
         background: #F5F5F5;
         transition: 0.3s;
         border-radius: 2px;
     }
 
     .nav-toggle.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-8px, 8px);
+        transform: translateY(4px) rotate(45deg);
     }
 
     .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
+        transform: translateY(-4px) rotate(-45deg);
     }
 
     .hero-content {
@@ -1004,6 +1003,14 @@ section {
     .nav-toggle span {
         width: 20px;
         height: 2px;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(3.5px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        transform: translateY(-3.5px) rotate(-45deg);
     }
 
     .content {
