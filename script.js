@@ -19,56 +19,76 @@ backdrop.style.cssText = `
 `;
 document.body.appendChild(backdrop);
 
+function closeMobileMenu() {
+    if (navMenu && navToggle) {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        backdrop.style.opacity = '0';
+        backdrop.style.visibility = 'hidden';
+    }
+}
+
+function openMobileMenu() {
+    if (navMenu && navToggle) {
+        navMenu.classList.add('active');
+        navToggle.classList.add('active');
+        navToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open');
+        backdrop.style.opacity = '1';
+        backdrop.style.visibility = 'visible';
+    }
+}
+
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', (e) => {
         e.preventDefault();
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-        
-        // Toggle backdrop
+        e.stopPropagation();
         if (navMenu.classList.contains('active')) {
-            backdrop.style.opacity = '1';
-            backdrop.style.visibility = 'visible';
+            closeMobileMenu();
         } else {
-            backdrop.style.opacity = '0';
-            backdrop.style.visibility = 'hidden';
+            openMobileMenu();
         }
     });
+
+    navToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navToggle.click();
+        }
+    });
+} else {
+    console.error('Nav toggle or menu not found:', { navToggle, navMenu });
 }
+
+// Close mobile menu when pressing Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        document.body.classList.remove('menu-open');
-        backdrop.style.opacity = '0';
-        backdrop.style.visibility = 'hidden';
+        closeMobileMenu();
     });
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('active') && 
+    if (navMenu && navMenu.classList.contains('active') && 
         !navMenu.contains(e.target) && 
         !navToggle.contains(e.target) &&
         !backdrop.contains(e.target)) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        document.body.classList.remove('menu-open');
-        backdrop.style.opacity = '0';
-        backdrop.style.visibility = 'hidden';
+        closeMobileMenu();
     }
 });
 
 // Close menu when clicking on backdrop
 backdrop.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-    navToggle.classList.remove('active');
-    document.body.classList.remove('menu-open');
-    backdrop.style.opacity = '0';
-    backdrop.style.visibility = 'hidden';
+    closeMobileMenu();
 });
 
 // Smooth scrolling for navigation links
