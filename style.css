@@ -30,18 +30,16 @@
 
 /* Navigation */
 .navbar {
-    position: fixed;
-    top: 0;
+    position: relative;
     width: 100%;
     max-width: 100vw;
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 1000;
     padding: 1rem 0;
     border-bottom: 2px solid #4CAF50;
     overflow-x: hidden;
     box-sizing: border-box;
-    height: 60px;
+
 }
 
 .nav-content {
@@ -68,6 +66,14 @@
     margin: 0;
     padding: 0;
     gap: 1.5rem;
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
 }
 
 .nav-menu a {
@@ -109,10 +115,11 @@
     text-align: center;
     color: white;
     padding: 2rem 1rem;
-    margin-top: 60px;
+    margin-top: 0;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
+    position: relative;
 }
 
 .hero-content {
@@ -204,6 +211,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+    position: relative;
 }
 
 h1{
@@ -230,7 +238,6 @@ h3 {
     padding-right: 1rem;
     background: transparent;
     position: relative;
-    z-index: 1;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -781,60 +788,77 @@ section {
 @media (max-width: 767px) {
     .nav-menu {
         position: fixed;
-        top: 60px;
+        top: 0;
         right: 0;
         left: auto;
         flex-direction: column;
         background-color: rgba(26, 26, 26, 0.98);
-        width: 70%;
-        max-width: 300px;
+        width: 80%;
+        max-width: 350px;
         text-align: center;
-        transition: transform 0.3s ease;
-        padding: 2rem 0;
+        transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+        padding: 5rem 1rem 2rem 1rem;
         gap: 1.5rem;
-        z-index: 9999;
         box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
-        overflow-x: hidden;
         box-sizing: border-box;
-        height: calc(100vh - 60px);
-        overflow-y: auto;
         transform: translateX(100%);
-        visibility: hidden;
+        opacity: 0;
+        z-index: 1000;
+        height: 100vh;
+        overflow-y: auto;
     }
 
     .nav-menu.active {
         transform: translateX(0);
         visibility: visible;
+        opacity: 1;
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 
     .nav-menu li {
         width: 100%;
         box-sizing: border-box;
         list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
     .nav-menu a {
-        font-size: 1.1rem;
-        padding: 0.8rem;
+        font-size: 1.2rem;
+        padding: 1rem;
         display: block;
         width: 100%;
         box-sizing: border-box;
-        overflow-wrap: break-word;
+        overflow-wrap: fit;
         color: #F5F5F5;
         text-decoration: none;
         background: transparent;
         border: none;
+        transition: background 0.3s ease, color 0.3s ease;
     }
 
     .nav-menu a:hover {
         color: #4CAF50;
-        background: rgba(76, 175, 80, 0.1);
+        background: rgba(76, 175, 80, 0.15);
     }
 
     .nav-toggle {
         display: flex;
-        z-index: 10000;
         cursor: pointer;
+        padding: 5px;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .nav-toggle span {
+        width: 25px;
+        background: #F5F5F5;
+        transition: 0.3s;
+        border-radius: 2px;
     }
 
     .nav-toggle.active span:nth-child(1) {
