@@ -2,21 +2,39 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-console.log('navToggle:', navToggle);
-console.log('navMenu:', navMenu);
+// Create backdrop overlay
+const backdrop = document.createElement('div');
+backdrop.className = 'nav-backdrop';
+backdrop.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+`;
+document.body.appendChild(backdrop);
 
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log('Toggle clicked');
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
-        // Don't hide body overflow to allow menu scrolling
-        console.log('Menu active:', navMenu.classList.contains('active'));
-        console.log('Menu styles:', window.getComputedStyle(navMenu));
+        document.body.classList.toggle('menu-open');
+        
+        // Toggle backdrop
+        if (navMenu.classList.contains('active')) {
+            backdrop.style.opacity = '1';
+            backdrop.style.visibility = 'visible';
+        } else {
+            backdrop.style.opacity = '0';
+            backdrop.style.visibility = 'hidden';
+        }
     });
-} else {
-    console.error('Nav toggle or menu not found');
 }
 
 // Close mobile menu when clicking on a link
@@ -24,6 +42,9 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        backdrop.style.opacity = '0';
+        backdrop.style.visibility = 'hidden';
     });
 });
 
@@ -31,10 +52,23 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 document.addEventListener('click', (e) => {
     if (navMenu.classList.contains('active') && 
         !navMenu.contains(e.target) && 
-        !navToggle.contains(e.target)) {
+        !navToggle.contains(e.target) &&
+        !backdrop.contains(e.target)) {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        backdrop.style.opacity = '0';
+        backdrop.style.visibility = 'hidden';
     }
+});
+
+// Close menu when clicking on backdrop
+backdrop.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    backdrop.style.opacity = '0';
+    backdrop.style.visibility = 'hidden';
 });
 
 // Smooth scrolling for navigation links
